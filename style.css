@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+p{
+  padding: 20px;
+}
+  
+  body {
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, #92a6c0, #1a32e0);
+    font-family: Helvetica, sans-serif;
+    color: rgb(211, 211, 211);
+  }
+  
+  .container {
+    width: 1100px;
+    height: 500px;
+    perspective: 800px;
+    display: flex;
+    gap: 30px;
+    /* align-items: center; */
+  }
+  
+  .card:hover{
+    cursor: pointer;
+    transform: rotateY(180deg) rotateZ(180deg);
+  }
+  
+  .card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+    padding-left: 10px;
+  }
+  
+  .front,
+  .back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  #c1 >.front {
+    background-image: url(new\ york.jpg);
+    background-size: cover;
+  }
+  #c2 >.front {
+    background-image: url(sydney.jpg);
+    background-size: cover;
+  }
+  #c3 >.front {
+    background-image: url(tokyo.jpg);
+    background-size: cover;
+  }
+  
+  .back {
+    background-color: #3a3a3a;
+    transform: rotateY(180deg) rotateZ(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
